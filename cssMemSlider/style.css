@@ -173,7 +173,10 @@ input[name="radio-bullet"]:checked + .bullet {
 
 #radio-1:checked ~ .images #item-2,
 #radio-1:checked ~ .images #item-3,
-#radio-1:checked ~ .images #item-4 {
+#radio-1:checked ~ .images #item-4,
+#radio-1:checked ~ .text #text-2,
+#radio-1:checked ~ .text #text-3,
+#radio-1:checked ~ .text #text-4 {
     display: none;
 }
 #radio-1:checked ~ .images #item-1 {
@@ -182,9 +185,18 @@ input[name="radio-bullet"]:checked + .bullet {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+#radio-1:checked ~ .text #text-1 {
+    animation-name: text-swipe-1;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
 #radio-2:checked ~ .images #item-1,
 #radio-2:checked ~ .images #item-3,
-#radio-2:checked ~ .images #item-4 {
+#radio-2:checked ~ .images #item-4,
+#radio-2:checked ~ .text #text-1,
+#radio-2:checked ~ .text #text-3,
+#radio-2:checked ~ .text #text-4 {
     opacity: 0;
 }
 #radio-2:checked ~ .images #item-2 {
@@ -193,9 +205,18 @@ input[name="radio-bullet"]:checked + .bullet {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+#radio-2:checked ~ .text #text-2 {
+    animation-name: text-swipe-2;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
 #radio-3:checked ~ .images #item-1,
 #radio-3:checked ~ .images #item-2,
-#radio-3:checked ~ .images #item-4 {
+#radio-3:checked ~ .images #item-4,
+#radio-3:checked ~ .text #text-1,
+#radio-3:checked ~ .text #text-2,
+#radio-3:checked ~ .text #text-4 {
     opacity: 0;
 }
 #radio-3:checked ~ .images #item-3 {
@@ -204,13 +225,28 @@ input[name="radio-bullet"]:checked + .bullet {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+#radio-3:checked ~ .text #text-3 {
+    animation-name: text-swipe-3;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
 #radio-4:checked ~ .images #item-1,
 #radio-4:checked ~ .images #item-2,
-#radio-4:checked ~ .images #item-3 {
+#radio-4:checked ~ .images #item-3,
+#radio-4:checked ~ .text #text-1,
+#radio-4:checked ~ .text #text-2,
+#radio-4:checked ~ .text #text-3 {
     opacity: 0;
 }
 #radio-4:checked ~ .images #item-4 {
     animation-name: image-swipe-4;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-4:checked ~ .text #text-4 {
+    animation-name: text-swipe-4;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
@@ -246,5 +282,38 @@ input[name="radio-bullet"]:checked + .bullet {
     }
     to {
         transform: translateX(-240vw);
+    }
+}
+
+@keyframes text-swipe-1 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes text-swipe-2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes text-swipe-3 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+@keyframes text-swipe-4 {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(-300%);
     }
 }
