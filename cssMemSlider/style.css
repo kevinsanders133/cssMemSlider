@@ -170,3 +170,81 @@ input[name="radio-bullet"]:checked + .bullet {
     border: 2px solid rgb(65, 65, 231);
     background-color: transparent;
 }
+
+#radio-1:checked ~ .images #item-2,
+#radio-1:checked ~ .images #item-3,
+#radio-1:checked ~ .images #item-4 {
+    display: none;
+}
+#radio-1:checked ~ .images #item-1 {
+    animation-name: image-swipe-1;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-2:checked ~ .images #item-1,
+#radio-2:checked ~ .images #item-3,
+#radio-2:checked ~ .images #item-4 {
+    opacity: 0;
+}
+#radio-2:checked ~ .images #item-2 {
+    animation-name: image-swipe-2;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-3:checked ~ .images #item-1,
+#radio-3:checked ~ .images #item-2,
+#radio-3:checked ~ .images #item-4 {
+    opacity: 0;
+}
+#radio-3:checked ~ .images #item-3 {
+    animation-name: image-swipe-3;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-4:checked ~ .images #item-1,
+#radio-4:checked ~ .images #item-2,
+#radio-4:checked ~ .images #item-3 {
+    opacity: 0;
+}
+#radio-4:checked ~ .images #item-4 {
+    animation-name: image-swipe-4;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes image-swipe-1 {
+    from {
+        transform: translateX(80vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes image-swipe-2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-80vw);
+    }
+}
+@keyframes image-swipe-3 {
+    from {
+        transform: translateX(-80vw);
+    }
+    to {
+        transform: translateX(-160vw);
+    }
+}
+@keyframes image-swipe-4 {
+    from {
+        transform: translateX(-160vw);
+    }
+    to {
+        transform: translateX(-240vw);
+    }
+}
