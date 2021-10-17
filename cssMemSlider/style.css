@@ -328,7 +328,7 @@ input[name="radio-bullet"]:active + .bullet {
 }
 
 
-@media (max-width: 685px) {
+@media (max-width: 722px) {
     .images {
         height: 50vh;
     }
