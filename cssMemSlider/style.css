@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #25282A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main {
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+}
+
+.images {
+    border-radius: 0.625rem;
+    grid-row: 1 / 12;
+    grid-column: 1 / 30;
+    display: flex;
+    list-style-type: none;
+}
+
+.images-item {
+    border-radius: 0.625rem;
+    width: 80vw;
+    flex-shrink: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#item-1 {
+    background: url('./img/bean1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(0);
+}
+
+#item-2 {
+    background: url('./img/bean2.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(-80vw);
+}
+
+#item-3 {
+    background: url('./img/keepGoing1.jpg') no-repeat, white;
+    background-position: center center;
+    background-size: contain;
+    transform: translateX(-160vw);
+}
+
+#item-4 {
+    background: url('./img/keepGoing2.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(-240vw);
+}
+
+.slider {
+    width: 80vw;
+    height: 90vh;
+    margin-top: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+#radio-1, #radio-2, #radio-3, #radio-4,
+#bullet-1, #bullet-2, #bullet-3, #bullet-4 {
+    grid-row: 13 / 14;
+    justify-self: center;
+    align-self: center;
+    margin-top: 0.31rem;
+}
+
+#radio-1, #radio-2, #radio-3, #radio-4 {
+    transform: rotate(0);
+}
+
+#radio-1 {
+    grid-column: 27 / 28;
+}
+#radio-2 {
+    grid-column: 28 / 29;
+}
+#radio-3 {
+    grid-column: 29 / 30;
+}
+#radio-4 {
+    grid-column: 30 / 31;
+}
+
+#bullet-1 {
+    grid-column: 27 / 28;
+}
+#bullet-2 {
+    grid-column: 28 / 29;
+}
+#bullet-3 {
+    grid-column: 29 / 30;
+}
+#bullet-4 {
+    grid-column: 30 / 31;
+}
+
+.text {
+    color: #fff;
+    font-size: 1.25rem;
+    display: flex;
+    overflow: auto;
+    list-style-type: none;
+    scroll-behavior: smooth;    
+    grid-row: 13 / 14;
+    grid-column: 1 / 15;
+    margin-bottom: 0.625rem;
+}
+
+.text-item {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#text-1 {
+    transform: translateX(0);
+}
+#text-2 {
+    transform: translateX(-100%);
+}
+#text-3 {
+    transform: translateX(-200%);
+}
+#text-4 {
+    transform: translateX(-300%);
+}
+
+.bullet {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgb(65, 65, 231);
+}
+
+input[name="radio-bullet"] {
+    width: 1.94rem;
+    height: 1.94rem;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[name="radio-bullet"]:hover + .bullet {
+    background-color: rgb(200, 200, 233);
+    transition: all 0.2s;
+}
+
+input[name="radio-bullet"]:checked:hover + .bullet {
+    border: 0.125rem solid rgb(200, 200, 233);
+    background-color: transparent;
+}
+
+input[name="radio-bullet"]:checked + .bullet {
+    border: 0.125rem solid rgb(65, 65, 231);
+    background-color: transparent;
+}
+
+input[name="radio-bullet"]:active + .bullet {
+    background-color: rgb(150, 150, 163);
+    transition: all 0.2s;
+}
+
+#radio-1:checked ~ .images #item-2,
+#radio-1:checked ~ .images #item-3,
+#radio-1:checked ~ .images #item-4,
+#radio-1:checked ~ .text #text-2,
+#radio-1:checked ~ .text #text-3,
+#radio-1:checked ~ .text #text-4 {
+    display: none;
+}
+#radio-1:checked ~ .images #item-1 {
+    animation-name: image-swipe-1;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-1:checked ~ .text #text-1 {
+    animation-name: text-swipe-1;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-2:checked ~ .images #item-1,
+#radio-2:checked ~ .images #item-3,
+#radio-2:checked ~ .images #item-4,
+#radio-2:checked ~ .text #text-1,
+#radio-2:checked ~ .text #text-3,
+#radio-2:checked ~ .text #text-4 {
+    opacity: 0;
+}
+#radio-2:checked ~ .images #item-2 {
+    animation-name: image-swipe-2;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-2:checked ~ .text #text-2 {
+    animation-name: text-swipe-2;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-3:checked ~ .images #item-1,
+#radio-3:checked ~ .images #item-2,
+#radio-3:checked ~ .images #item-4,
+#radio-3:checked ~ .text #text-1,
+#radio-3:checked ~ .text #text-2,
+#radio-3:checked ~ .text #text-4 {
+    opacity: 0;
+}
+#radio-3:checked ~ .images #item-3 {
+    animation-name: image-swipe-3;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-3:checked ~ .text #text-3 {
+    animation-name: text-swipe-3;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-4:checked ~ .images #item-1,
+#radio-4:checked ~ .images #item-2,
+#radio-4:checked ~ .images #item-3,
+#radio-4:checked ~ .text #text-1,
+#radio-4:checked ~ .text #text-2,
+#radio-4:checked ~ .text #text-3 {
+    opacity: 0;
+}
+#radio-4:checked ~ .images #item-4 {
+    animation-name: image-swipe-4;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#radio-4:checked ~ .text #text-4 {
+    animation-name: text-swipe-4;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes image-swipe-1 {
+    from {
+        transform: translateX(80vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes image-swipe-2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-80vw);
+    }
+}
+@keyframes image-swipe-3 {
+    from {
+        transform: translateX(-80vw);
+    }
+    to {
+        transform: translateX(-160vw);
+    }
+}
+@keyframes image-swipe-4 {
+    from {
+        transform: translateX(-160vw);
+    }
+    to {
+        transform: translateX(-240vw);
+    }
+}
+
+@keyframes text-swipe-1 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes text-swipe-2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes text-swipe-3 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+@keyframes text-swipe-4 {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(-300%);
+    }
+}
+
+
+@media (max-width: 722px) {
+    .images {
+        height: 50vh;
+    }
+    .slider {
+        grid-template-columns: repeat(3, 1fr) repeat(7, 1rem) repeat(3, 1fr);
+        grid-template-rows: 60vh 2.19rem 1.875rem;
+    }
+    
+    #radio-1, #radio-2, #radio-3, #radio-4,
+    #bullet-1, #bullet-2, #bullet-3, #bullet-4 {
+        grid-row: 3 / 4;
+    }
+    
+    #radio-1 {
+        grid-column: 4 / 5;
+    }
+    #radio-2 {
+        grid-column: 6 / 7;
+    }
+    #radio-3 {
+        grid-column: 8 / 9;
+    }
+    #radio-4 {
+        grid-column: 10 / 11;
+    }
+    
+    #bullet-1 {
+        grid-column: 4 / 5;
+    }
+    #bullet-2 {
+        grid-column: 6 / 7;
+    }
+    #bullet-3 {
+        grid-column: 8 / 9;
+    }
+    #bullet-4 {
+        grid-column: 10 / 11;
+    }
+    
+    .text {
+        text-align: center;  
+        grid-row: 2 / 3;
+        grid-column: 1 / 14;
+    }
+}
