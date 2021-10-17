@@ -24,7 +24,7 @@ body {
 }
 
 .images {
-    border-radius: 10px;
+    border-radius: 0.625rem;
     grid-row: 1 / 12;
     grid-column: 1 / 30;
     display: flex;
@@ -32,7 +32,7 @@ body {
 }
 
 .images-item {
-    border-radius: 10px;
+    border-radius: 0.625rem;
     width: 80vw;
     flex-shrink: 0;
 }
@@ -72,7 +72,7 @@ body {
 .slider {
     width: 80vw;
     height: 90vh;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(15, 1fr);
@@ -83,7 +83,7 @@ body {
     grid-row: 13 / 14;
     justify-self: center;
     align-self: center;
-    margin-top: 5px;
+    margin-top: 0.31rem;
 }
 
 #radio-1, #radio-2, #radio-3, #radio-4 {
@@ -118,14 +118,14 @@ body {
 
 .text {
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem;
     display: flex;
     overflow: auto;
     list-style-type: none;
     scroll-behavior: smooth;    
     grid-row: 13 / 14;
     grid-column: 1 / 15;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .text-item {
@@ -147,15 +147,15 @@ body {
 }
 
 .bullet {
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     background-color: rgb(65, 65, 231);
 }
 
 input[name="radio-bullet"] {
-    width: 31px;
-    height: 31px;
+    width: 1.94rem;
+    height: 1.94rem;
     opacity: 0;
     cursor: pointer;
 }
@@ -166,12 +166,12 @@ input[name="radio-bullet"]:hover + .bullet {
 }
 
 input[name="radio-bullet"]:checked:hover + .bullet {
-    border: 2px solid rgb(200, 200, 233);
+    border: 0.125rem solid rgb(200, 200, 233);
     background-color: transparent;
 }
 
 input[name="radio-bullet"]:checked + .bullet {
-    border: 2px solid rgb(65, 65, 231);
+    border: 0.125rem solid rgb(65, 65, 231);
     background-color: transparent;
 }
 
@@ -333,8 +333,8 @@ input[name="radio-bullet"]:active + .bullet {
         height: 50vh;
     }
     .slider {
-        grid-template-columns: repeat(3, 1fr) repeat(7, 16px) repeat(3, 1fr);
-        grid-template-rows: 60vh 35px 30px;
+        grid-template-columns: repeat(3, 1fr) repeat(7, 1rem) repeat(3, 1fr);
+        grid-template-rows: 60vh 2.19rem 1.875rem;
     }
     
     #radio-1, #radio-2, #radio-3, #radio-4,
