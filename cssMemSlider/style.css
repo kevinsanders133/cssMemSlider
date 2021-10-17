@@ -44,12 +44,14 @@ body {
 #item-1 {
     background: url('./img/bean1.jpg') no-repeat;
     background-size: cover;
+    background-position: center;
     transform: translateX(0);
 }
 
 #item-2 {
     background: url('./img/bean2.jpg') no-repeat;
     background-size: cover;
+    background-position: center;
     transform: translateX(-80vw);
 }
 
@@ -63,6 +65,7 @@ body {
 #item-4 {
     background: url('./img/keepGoing2.jpg') no-repeat;
     background-size: cover;
+    background-position: center;
     transform: translateX(-240vw);
 }
 
@@ -315,5 +318,53 @@ input[name="radio-bullet"]:checked + .bullet {
     }
     to {
         transform: translateX(-300%);
+    }
+}
+
+
+@media (max-width: 685px) {
+    .images {
+        height: 50vh;
+    }
+    .slider {
+        grid-template-columns: repeat(3, 1fr) repeat(7, 16px) repeat(3, 1fr);
+        grid-template-rows: 60vh 35px 30px;
+    }
+    
+    #radio-1, #radio-2, #radio-3, #radio-4,
+    #bullet-1, #bullet-2, #bullet-3, #bullet-4 {
+        grid-row: 3 / 4;
+    }
+    
+    #radio-1 {
+        grid-column: 4 / 5;
+    }
+    #radio-2 {
+        grid-column: 6 / 7;
+    }
+    #radio-3 {
+        grid-column: 8 / 9;
+    }
+    #radio-4 {
+        grid-column: 10 / 11;
+    }
+    
+    #bullet-1 {
+        grid-column: 4 / 5;
+    }
+    #bullet-2 {
+        grid-column: 6 / 7;
+    }
+    #bullet-3 {
+        grid-column: 8 / 9;
+    }
+    #bullet-4 {
+        grid-column: 10 / 11;
+    }
+    
+    .text {
+        text-align: center;  
+        grid-row: 2 / 3;
+        grid-column: 1 / 14;
     }
 }
