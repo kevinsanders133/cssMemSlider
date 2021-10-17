@@ -81,7 +81,8 @@ body {
 #radio-1, #radio-2, #radio-3, #radio-4,
 #bullet-1, #bullet-2, #bullet-3, #bullet-4 {
     grid-row: 13 / 14;
-    justify-self: end;
+    justify-self: center;
+    align-self: center;
     margin-top: 5px;
 }
 
@@ -153,8 +154,8 @@ body {
 }
 
 input[name="radio-bullet"] {
-    width: 23px;
-    height: 23px;
+    width: 31px;
+    height: 31px;
     opacity: 0;
     cursor: pointer;
 }
@@ -172,6 +173,11 @@ input[name="radio-bullet"]:checked:hover + .bullet {
 input[name="radio-bullet"]:checked + .bullet {
     border: 2px solid rgb(65, 65, 231);
     background-color: transparent;
+}
+
+input[name="radio-bullet"]:active + .bullet {
+    background-color: rgb(150, 150, 163);
+    transition: all 0.2s;
 }
 
 #radio-1:checked ~ .images #item-2,
